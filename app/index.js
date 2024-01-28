@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { Stack, useRouter } from "expo-router";
-import { NavigationContainer } from '@react-navigation/native';
+
 import { COLORS, icons, images, SIZES } from "../constants";
 import {
   Nearbyjobs,
@@ -37,16 +37,17 @@ const Home = () => {
             padding: SIZES.medium,
           }}
         >
-        <Welcome
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        handleClick={() => {
-            if (searchTerm) {
-            router.push(`/search/${searchTerm}`)
-            }
-        }}
-        />
-          <Popularjobs />
+          <Welcome
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleClick={() => {
+              if (searchTerm) {
+                router.push(`/search/${searchTerm}`)
+              }
+            }}
+          />
+
+        {/*  <Popularjobs /> */}
           <Nearbyjobs />
         </View>
       </ScrollView>
